@@ -1,0 +1,4 @@
+split,n_images,COVID19,NORMAL,PNEUMONIA,n_patients
+train,5145,461,1266,3418,
+val,643,58,158,427,
+test,644,57,159,428,

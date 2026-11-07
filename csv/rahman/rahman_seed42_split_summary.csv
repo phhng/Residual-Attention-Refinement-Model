@@ -1,0 +1,4 @@
+split,n_images,COVID,Lung_Opacity,Normal,Viral Pneumonia,n_patients
+train,16932,2893,4809,8154,1076,
+val,2116,361,601,1019,135,
+test,2117,362,602,1019,134,
