@@ -1,4 +1,0 @@
-split,n_images,NORMAL,PNEUMONIA,n_patients
-train,4684,1266,3418,2713
-val,586,159,427,514
-test,586,158,428,523
