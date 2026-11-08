@@ -1,0 +1,5 @@
+,pred_COVID,pred_Lung_Opacity,pred_Normal,pred_Viral Pneumonia
+true_COVID,325,17,20,0
+true_Lung_Opacity,9,524,69,0
+true_Normal,11,21,984,3
+true_Viral Pneumonia,0,1,6,127
