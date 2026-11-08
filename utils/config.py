@@ -49,5 +49,17 @@ OUT_DIR = BASE_OUT / RUN_NAME
 DATA_DIR = OUT_DIR / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 DATA_PATH = kagglehub.dataset_download(DATASETS[DATASET]["kaggle"])
-
+DATASET_ROOT = Path(DATASETS[DATASET]["root"])
+EXPECTED_DIR = DATA_PATH / DATASET_ROOT
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+DATA_PATH = Path(
+    kagglehub.dataset_download(DATASETS[DATASET]["kaggle"])
+)
+
+EXPECTED_DIR = DATA_PATH / DATASETS[DATASET]["root"]
+
+if not EXPECTED_DIR.exists():
+    DATA_PATH = Path(
+        kagglehub.dataset_download(DATASETS[DATASET]["kaggle"])
+    )

@@ -10,11 +10,11 @@ from utils.train import train, evaluate
 from model.MSR import *
 from utils.report_results import *
 
-tr_df, val_df, ts_df, class_names = split_data()
-train_loader, val_loader,test_loader = load_data(tr_df, val_df, ts_df)
-num_classes = len(class_names)
-
 def run_experiment(seed, run_dir):
+    
+    tr_df, val_df, ts_df, class_names = split_data()
+    train_loader, val_loader,test_loader = load_data(tr_df, val_df, ts_df)
+    num_classes = len(class_names)
     """Train with `seed` on the fixed seed-42 split, evaluate on the test split, write all logs/reports to run_dir."""
     run_dir = Path(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
@@ -30,7 +30,7 @@ def run_experiment(seed, run_dir):
     scheduler = optim.lr_scheduler.SequentialLR(optimizer, schedulers=[warmup, cosine], milestones=[NUM_WARMUP])
 
     ckpt = run_dir / "best_model.pth"
-    history = train(model, train_loader, val_loader, criterion, optimizer, scheduler, device, 1,
+    history = train(model, train_loader, val_loader, criterion, optimizer, scheduler, device, NUM_EPOCHS,
                     ckpt, run_dir / "training_log.csv", feature_masking=FEATURE_MASKING,
                     input_masking=INPUT_MASKING)
     torch.save(model.state_dict(), run_dir / "last_model.pth")
