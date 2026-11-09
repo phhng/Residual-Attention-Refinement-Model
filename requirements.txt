@@ -9,3 +9,4 @@ torchvision
 scikit-learn
 ptflops
 IPython
+opencv-python

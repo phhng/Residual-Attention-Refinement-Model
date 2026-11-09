@@ -22,10 +22,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import SVG, display
 
-CM_ROOT     = Path("results/logs")          # <-- change to your folder
-CM_KEYWORDS = ("cm", "confusion")   # a file is a CM if its name contains one of these
+CM_ROOT     = Path("results/logs")
+CM_KEYWORDS = ("cm", "confusion")
 OUT_SVG     = Path("results/graphics/confusion_matrices.svg")
-NORMALIZE   = True                  # colour = % of each true class; cell text = raw count (+ %)
+NORMALIZE   = True
 
 # %% Cell 2 - read a confusion matrix
 def _strip(label: str) -> str:
@@ -73,8 +73,6 @@ SHOW_VALUES = True   # count (and % of true class when NORMALIZE=True) inside ea
 import math
 
 def grid_shape(n: int):
-    """Near-square grid. Even n splits exactly (4 -> 2x2, 6 -> 2x3, 8 -> 2x4, 12 -> 3x4);
-    odd n uses ceil(sqrt(n)) columns and leaves the last cell(s) empty."""
     if n % 2 == 0:
         rows = max(d for d in range(1, int(math.isqrt(n)) + 1) if n % d == 0)
         return rows, n // rows
@@ -83,7 +81,6 @@ def grid_shape(n: int):
 
 def plot_cms(cms: dict, out_path: Path):
     plt.rcParams["svg.fonttype"] = "none"
-    # flatten to a list of panels in dataset order
     panels = []
     for i, (ds, runs) in enumerate(cms.items()):
         letter = f"({chr(97 + i)}) {ds.replace('_', ' ').title()}"

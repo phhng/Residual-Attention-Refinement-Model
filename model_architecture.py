@@ -1,7 +1,6 @@
-from main import MODEL_PATH
-from utils.load_model import load_model
+from utils.load_model import *
 
-MODEL_PATH = "weights/eca_LN_kermany42.pth"
+MODEL_PATH = "model/weights/eca_LN_kermany42.pth"
 OUT_FILE = "architecture.txt"
 
 model, device = load_model(MODEL_PATH, num_classes=2)
