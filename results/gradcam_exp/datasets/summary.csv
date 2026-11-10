@@ -1,0 +1,10 @@
+experiment,dataset,model,true_class,pred_class,confidence,prob_true_class,correct,image
+datasets,rahman,rahman_msr,COVID-19,COVID-19,0.9821,0.9821,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\COVID\images\COVID-3356.png
+datasets,rahman,rahman_msr,Lung Opacity,Lung Opacity,0.9984,0.9984,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\Lung_Opacity\images\Lung_Opacity-182.png
+datasets,rahman,rahman_msr,Normal,Normal,0.9951,0.9951,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\Normal\images\Normal-1193.png
+datasets,rahman,rahman_msr,Pneumonia,Pneumonia,0.9981,0.9981,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\Viral Pneumonia\images\Viral Pneumonia-295.png
+datasets,cohen,cohen_msr,COVID-19,COVID-19,0.9943,0.9943,True,C:\Users\dehoa\.cache\kagglehub\datasets\prashant268\chest-xray-covid19-pneumonia\versions\2\Data\test\COVID19\COVID19(541).jpg
+datasets,cohen,cohen_msr,Normal,Normal,0.9951,0.9951,True,C:\Users\dehoa\.cache\kagglehub\datasets\prashant268\chest-xray-covid19-pneumonia\versions\2\Data\test\NORMAL\NORMAL(1323).jpg
+datasets,cohen,cohen_msr,Pneumonia,Pneumonia,0.9893,0.9893,True,C:\Users\dehoa\.cache\kagglehub\datasets\prashant268\chest-xray-covid19-pneumonia\versions\2\Data\test\PNEUMONIA\PNEUMONIA(3443).jpg
+datasets,kermany,kermany_msr,Normal,Normal,0.9873,0.9873,True,C:\Users\dehoa\.cache\kagglehub\datasets\paultimothymooney\chest-xray-pneumonia\versions\2\chest_xray\test\NORMAL\NORMAL2-IM-0288-0001.jpeg
+datasets,kermany,kermany_msr,Pneumonia,Pneumonia,0.9994,0.9994,True,C:\Users\dehoa\.cache\kagglehub\datasets\paultimothymooney\chest-xray-pneumonia\versions\2\chest_xray\test\PNEUMONIA\person120_bacteria_571.jpeg

@@ -1,0 +1,13 @@
+dataset,variant,cls,support,precision,recall,specificity,f1,auroc
+cohen3_test,strict,COVID19,57,0.95,1.0,0.9949,0.9744,0.9994
+cohen3_test,strict,NORMAL,159,0.986,0.8868,0.9959,0.9338,0.9917
+cohen3_test,strict,PNEUMONIA,428,0.966,0.9953,0.9306,0.9804,0.9937
+cohen3_test,opacity_as_pneumonia,COVID19,57,0.9464,0.9298,0.9949,0.9381,0.9985
+cohen3_test,opacity_as_pneumonia,NORMAL,159,0.986,0.8868,0.9959,0.9338,0.9919
+cohen3_test,opacity_as_pneumonia,PNEUMONIA,428,0.9573,0.9953,0.912,0.9759,0.9935
+cohen3_test_norahman,strict,COVID19,27,0.931,1.0,0.9949,0.9643,0.9991
+cohen3_test_norahman,strict,NORMAL,61,0.9574,0.7377,0.9945,0.8333,0.9783
+cohen3_test_norahman,strict,PNEUMONIA,335,0.9597,0.994,0.8409,0.9765,0.9848
+cohen3_test_norahman,opacity_as_pneumonia,COVID19,27,0.92,0.8519,0.9949,0.8846,0.9972
+cohen3_test_norahman,opacity_as_pneumonia,NORMAL,61,0.9574,0.7377,0.9945,0.8333,0.9788
+cohen3_test_norahman,opacity_as_pneumonia,PNEUMONIA,335,0.9487,0.994,0.7955,0.9708,0.9842

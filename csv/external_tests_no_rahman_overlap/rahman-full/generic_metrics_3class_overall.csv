@@ -1,0 +1,5 @@
+dataset,variant,n,accuracy,macro_precision,macro_recall,macro_f1,auc_micro,auroc_macro_ovr
+cohen3_test,strict,644,0.9689,0.9673,0.9607,0.9629,0.9964,0.9949
+cohen3_test,opacity_as_pneumonia,644,0.9627,0.9632,0.9373,0.9493,0.9959,0.9946
+cohen3_test_norahman,strict,423,0.9574,0.9494,0.9106,0.9247,0.9949,0.9874
+cohen3_test_norahman,opacity_as_pneumonia,423,0.948,0.9421,0.8612,0.8963,0.9941,0.9867

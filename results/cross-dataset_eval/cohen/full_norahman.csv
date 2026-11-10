@@ -1,0 +1,4 @@
+,pred_COVID19,pred_NORMAL,pred_PNEUMONIA
+true_COVID19,22,0,5
+true_NORMAL,2,49,10
+true_PNEUMONIA,0,3,332

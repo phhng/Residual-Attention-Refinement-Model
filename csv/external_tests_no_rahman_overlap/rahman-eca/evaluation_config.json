@@ -1,0 +1,64 @@
+{
+  "model": "rahman-eca",
+  "weights": "./model/weights/eca_LN_rahman42.pth",
+  "num_classes": 4,
+  "train_dataset": "rahman",
+  "encoder_output": false,
+  "groups": {
+    "pneumonia_only": {
+      "NORMAL": [
+        2
+      ],
+      "PNEUMONIA": [
+        3
+      ]
+    },
+    "any_pathology": {
+      "NORMAL": [
+        2
+      ],
+      "PNEUMONIA": [
+        0,
+        1,
+        3
+      ]
+    }
+  },
+  "groups3": {
+    "strict": {
+      "COVID19": [
+        0
+      ],
+      "NORMAL": [
+        2
+      ],
+      "PNEUMONIA": [
+        3
+      ]
+    },
+    "opacity_as_pneumonia": {
+      "COVID19": [
+        0
+      ],
+      "NORMAL": [
+        2
+      ],
+      "PNEUMONIA": [
+        1,
+        3
+      ]
+    }
+  },
+  "threshold": 0.5,
+  "n_boot": 1000,
+  "seed": 42,
+  "datasets": [
+    "kermany_test",
+    "kermany_test_norahman",
+    "cohen_test",
+    "cohen_test_norahman",
+    "cohen3_test",
+    "cohen3_test_norahman"
+  ],
+  "test_only": true
+}

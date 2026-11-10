@@ -1,0 +1,3 @@
+,pred_NORMAL,pred_PNEUMONIA
+true_NORMAL,11,11
+true_PNEUMONIA,2,291

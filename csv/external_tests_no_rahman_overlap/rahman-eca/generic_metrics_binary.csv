@@ -1,0 +1,9 @@
+dataset,variant,n,n_pos,accuracy,precision,recall,specificity,f1,auc_micro,balanced_accuracy,auroc
+kermany_test,pneumonia_only,586,428,0.9761,0.9726,0.9953,0.9241,0.9838,0.9896,0.9597,0.9896
+kermany_test,any_pathology,586,428,0.9744,0.9704,0.9953,0.9177,0.9827,0.9895,0.9565,0.9895
+kermany_test_norahman,pneumonia_only,315,293,0.9587,0.9636,0.9932,0.5,0.9782,0.9187,0.7466,0.9187
+kermany_test_norahman,any_pathology,315,293,0.9556,0.9604,0.9932,0.4545,0.9765,0.9178,0.7239,0.9178
+cohen_test,pneumonia_only,587,428,0.9761,0.9705,0.9977,0.9182,0.9839,0.9925,0.958,0.9925
+cohen_test,any_pathology,587,428,0.971,0.9639,0.9977,0.8994,0.9805,0.9923,0.9485,0.9923
+cohen_test_norahman,pneumonia_only,396,335,0.9672,0.9653,0.997,0.8033,0.9809,0.981,0.9001,0.981
+cohen_test_norahman,any_pathology,396,335,0.9621,0.9598,0.997,0.7705,0.978,0.9804,0.8838,0.9804

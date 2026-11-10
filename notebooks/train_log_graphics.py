@@ -120,7 +120,7 @@ def plot_logs(logs: dict, out_path: Path):
             ax.grid(alpha=0.3)
             ax.set_xlabel("Epoch")
             # annotation on every panel: "(a) Kermany - Accuracy" / "(a) Kermany - Loss"
-            ax.set_title(f"({chr(97 + j)}) {ds.replace('_', ' ').title()} - {ylabel}",
+            ax.set_title(f"{ds.replace('_', ' ').title()} - {ylabel}",
                          fontweight="bold")
             ax.legend(fontsize=7, frameon=False)
 

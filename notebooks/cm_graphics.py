@@ -1,12 +1,12 @@
 # %% [markdown]
 # # Confusion matrices -> grouped SVG figure
-# Expected layout (dataset = first-level folder; one CM file per run, name contains "cm" or "confusion"):
+# Cross-dataset confusion-matrix CSVs are grouped by their first-level folder.
 # ```
 # logs/
 #   kermany/  resnet50_cm.csv  vgg16_cm.csv
 #   cohen/    resnet50_cm.csv  vgg16_cm.csv
 # ```
-# File format: CSV/TSV with a header row and a label column, e.g.
+# File format: CSV with a header row and a label column, e.g.
 # ```
 #                    pred_COVID  pred_Lung_Opacity  pred_Normal  pred_Viral Pneumonia
 # true_COVID         325         17                 20           0
@@ -22,8 +22,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import SVG, display
 
-CM_ROOT     = Path("results/logs")
-CM_KEYWORDS = ("cm", "confusion")
+# CM_ROOT     = Path("results/logs")
+CM_ROOT     = Path("results/cross-dataset_eval")
 OUT_SVG     = Path("results/graphics/confusion_matrices.svg")
 NORMALIZE   = True
 
@@ -49,15 +49,15 @@ def read_cm(path: Path) -> pd.DataFrame:
     df.index   = [_strip(i) for i in df.index]
     return df.astype(float)
 
-# %% Cell 3 - group CMs by dataset (folder name)
+# %% Cell 3 - group confusion matrices by dataset (folder name)
 def load_cms(root: Path) -> dict:
-    """returns {dataset_name: {run_name: DataFrame}}"""
+    """Load confusion matrices, excluding training logs and augmented runs."""
     grouped = {}
     for ds_dir in sorted(p for p in root.iterdir() if p.is_dir()):
         runs = {}
         for f in sorted(ds_dir.rglob("*")):
-            if f.suffix.lower() in {".csv", ".tsv", ".txt"} and \
-               any(k in f.stem.lower() for k in CM_KEYWORDS):
+            if (f.suffix.lower() == ".csv" and f.stem.casefold() != "training_log"
+                    and "aug" not in f.name.casefold()):
                 rel = f.relative_to(ds_dir).with_suffix("")
                 runs[str(rel).replace("\\", "/")] = read_cm(f)
         if runs:
@@ -73,20 +73,44 @@ SHOW_VALUES = True   # count (and % of true class when NORMALIZE=True) inside ea
 import math
 
 def grid_shape(n: int):
+    if n < 1:
+        raise ValueError("cannot create confusion-matrix grid: no CSV panels were selected")
     if n % 2 == 0:
         rows = max(d for d in range(1, int(math.isqrt(n)) + 1) if n % d == 0)
         return rows, n // rows
     cols = math.ceil(math.sqrt(n))
     return math.ceil(n / cols), cols
 
+
+def panel_title(dataset: str, run: str) -> str:
+    run_name = Path(run).name
+    dataset_name = dataset.replace("_", " ").title()
+    if run_name.casefold() == "confusion_matrix":
+        return dataset_name
+
+    model_names = {
+        "eca": "Model A",
+        "full": "Model B",
+    }
+    model_key, separator, variant = run_name.partition("_")
+    model_name = model_names.get(model_key, run_name)
+    has_norahman_marker = "norahman" in run_name.casefold()
+    if separator and not has_norahman_marker:
+        model_name += f" ({variant})"
+    if has_norahman_marker:
+        dataset_name += "*"
+    return f"{dataset_name} - {model_name}"
+
+
 def plot_cms(cms: dict, out_path: Path):
     plt.rcParams["svg.fonttype"] = "none"
     panels = []
-    for i, (ds, runs) in enumerate(cms.items()):
-        letter = f"({chr(97 + i)}) {ds.replace('_', ' ').title()}"
+    for ds, runs in cms.items():
         for run, cm in runs.items():
-            panels.append((f"{letter} - {run}" if len(runs) > 1 else letter, cm))
+            panels.append((panel_title(ds, run), cm))
 
+    if not panels:
+        raise ValueError("no confusion-matrix CSVs found after filtering training logs and augmented runs")
     n_rows, n_cols = grid_shape(len(panels))
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(3.0 * n_cols, 3.0 * n_rows),
                              squeeze=False)

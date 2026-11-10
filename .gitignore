@@ -35,3 +35,6 @@ htmlcov/
 *.swp
 
 outputs/
+manifest.json
+tensor_probe_out/
+*.zip

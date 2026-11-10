@@ -1,0 +1,5 @@
+experiment,dataset,model,true_class,pred_class,confidence,prob_true_class,correct,image
+mask_exp,rahman,input_masked,COVID-19,COVID-19,0.991,0.991,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\COVID\images\COVID-3356.png
+mask_exp,rahman,feature-level-mask,COVID-19,COVID-19,0.8117,0.8117,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\COVID\images\COVID-3356.png
+mask_exp,rahman,inverted-input-mask,COVID-19,COVID-19,0.5511,0.5511,True,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\COVID\images\COVID-3356.png
+mask_exp,rahman,mask-image-only,COVID-19,Normal,0.5988,0.395,False,C:\Users\dehoa\.cache\kagglehub\datasets\tawsifurrahman\covid19-radiography-database\versions\5\COVID-19_Radiography_Dataset\COVID\images\COVID-3356.png
