@@ -19,9 +19,25 @@ def compute_complexity(model):
 
     complexity = dict(total_params=total_params, trainable_params=trainable_params, inference_ms_cpu_single_pass=infer_ms)
     try:                                        # pip install ptflops
-        macs, _ = get_model_complexity_info(net, (3, *IMAGE_SIZE), as_strings=False, print_per_layer_stat=False, verbose=False)
+        macs, params = get_model_complexity_info(
+            net,
+            (3, *IMAGE_SIZE),
+            as_strings=False,
+            print_per_layer_stat=True,
+            verbose=True,
+            backend="aten"
+        )
         complexity["macs"] = macs
         log.info(f"MACs: {macs:,}")
     except ImportError:
         log.info("ptflops not installed - MACs skipped")
     (OUT_DIR / "complexity.json").write_text(json.dumps(complexity, indent=2))
+
+from utils.load_model import *
+
+MODEL_PATH = "model/weights/eca_LN_kermany42.pth"
+# MODEL_PATH = "model/weights/dsa_eca_LN_rahman42.pth"
+
+model, device = load_model(MODEL_PATH, num_classes=2)
+
+compute_complexity(model)

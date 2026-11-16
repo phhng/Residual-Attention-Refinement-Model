@@ -24,7 +24,8 @@ from IPython.display import SVG, display
 
 # CM_ROOT     = Path("results/logs")
 CM_ROOT     = Path("results/cross-dataset_eval")
-OUT_SVG     = Path("results/graphics/confusion_matrices.svg")
+# CM_ROOT = Path("results/patient-image-comparison")
+OUT_SVG     = Path("results/graphics/cross-ds-cm.svg")
 NORMALIZE   = True
 
 # %% Cell 2 - read a confusion matrix
@@ -57,7 +58,7 @@ def load_cms(root: Path) -> dict:
         runs = {}
         for f in sorted(ds_dir.rglob("*")):
             if (f.suffix.lower() == ".csv" and f.stem.casefold() != "training_log"
-                    and "aug" not in f.name.casefold()):
+                    and "aug" not in f.name.casefold()): # exclude augmented runs
                 rel = f.relative_to(ds_dir).with_suffix("")
                 runs[str(rel).replace("\\", "/")] = read_cm(f)
         if runs:
@@ -85,6 +86,9 @@ def grid_shape(n: int):
 def panel_title(dataset: str, run: str) -> str:
     run_name = Path(run).name
     dataset_name = dataset.replace("_", " ").title()
+    # run_name = run_name.replace("aug", "").replace("AUG", "")
+    # run_name = run_name.replace("__", "_").strip("_- ")
+    
     if run_name.casefold() == "confusion_matrix":
         return dataset_name
 

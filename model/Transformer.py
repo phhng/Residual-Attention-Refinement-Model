@@ -105,7 +105,7 @@ class Transformer(nn.Module):
             else:
                 pooled = memory.mean(0)                          # (B, C)
             pooled = self.out_norm(pooled)
-            return pooled.unsqueeze(-1)                    # (B, C, 1), same shape MSR expects
+            return pooled.unsqueeze(-1)                    # (B, C, 1)
     
         hs = self.decoder(
             tgt=query_embed, memory=memory, memory_key_padding_mask=mask, pos=value_pos, query_pos=query_pos
