@@ -5,9 +5,9 @@ cohen3_test,strict,PNEUMONIA,428,0.9705,0.9977,0.9398,0.9839,0.994
 cohen3_test,opacity_as_pneumonia,COVID19,57,0.9623,0.8947,0.9966,0.9273,0.9943
 cohen3_test,opacity_as_pneumonia,NORMAL,159,0.9931,0.9057,0.9979,0.9474,0.9921
 cohen3_test,opacity_as_pneumonia,PNEUMONIA,428,0.9574,0.9977,0.912,0.9771,0.989
-cohen3_test_norahman,strict,COVID19,27,0.9643,1.0,0.9975,0.9818,0.9994
-cohen3_test_norahman,strict,NORMAL,61,0.9796,0.7869,0.9972,0.8727,0.9784
-cohen3_test_norahman,strict,PNEUMONIA,335,0.9653,0.997,0.8636,0.9809,0.9854
-cohen3_test_norahman,opacity_as_pneumonia,COVID19,27,0.9545,0.7778,0.9975,0.8571,0.9893
-cohen3_test_norahman,opacity_as_pneumonia,NORMAL,61,0.9796,0.7869,0.9972,0.8727,0.9798
-cohen3_test_norahman,opacity_as_pneumonia,PNEUMONIA,335,0.9489,0.997,0.7955,0.9723,0.973
+cohen3_test_norahman,strict,COVID19,33,0.9429,1.0,0.9954,0.9706,0.9995
+cohen3_test_norahman,strict,NORMAL,88,0.9865,0.8295,0.9974,0.9012,0.9843
+cohen3_test_norahman,strict,PNEUMONIA,350,0.9641,0.9971,0.8926,0.9803,0.9891
+cohen3_test_norahman,opacity_as_pneumonia,COVID19,33,0.931,0.8182,0.9954,0.871,0.9906
+cohen3_test_norahman,opacity_as_pneumonia,NORMAL,88,0.9865,0.8295,0.9974,0.9012,0.9854
+cohen3_test_norahman,opacity_as_pneumonia,PNEUMONIA,350,0.9484,0.9971,0.843,0.9721,0.98

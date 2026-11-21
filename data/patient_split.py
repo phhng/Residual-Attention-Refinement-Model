@@ -69,7 +69,6 @@ def make_patient_grouped_splits(df, seed=42, no_dupe=False):
     val_df = dev_data.iloc[val_idx].reset_index(drop=True)
     test_df = data.iloc[test_idx].reset_index(drop=True)
 
-    # Verify patient separation
     train_patients = set(train_df["patient_id"])
     val_patients = set(val_df["patient_id"])
     test_patients = set(test_df["patient_id"])
@@ -109,7 +108,6 @@ def patient_split_experiment(df, seed=SPLIT_SEED, no_dupe=NO_DUPE, original_df=N
             index=False
         )
 
-    # Generate split summary
     summary, leak = split_summary(
         patient_splits,
         class_names

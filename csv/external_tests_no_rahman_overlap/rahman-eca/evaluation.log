@@ -1,13 +1,13 @@
-2026-11-10 00:55:11 | [rahman-eca] loaded (encoder_output=False)
-2026-11-10 00:57:18 | [rahman-eca/pneumonia_only] kermany_test: AUROC 0.9896 | sens 0.995 | spec 0.924 | bal.acc 0.960
-2026-11-10 00:57:21 | [rahman-eca/any_pathology] kermany_test: AUROC 0.9895 | sens 0.995 | spec 0.918 | bal.acc 0.957
-2026-11-10 00:58:30 | [rahman-eca/pneumonia_only] kermany_test_norahman: AUROC 0.9187 | sens 0.993 | spec 0.500 | bal.acc 0.747
-2026-11-10 00:58:33 | [rahman-eca/any_pathology] kermany_test_norahman: AUROC 0.9178 | sens 0.993 | spec 0.455 | bal.acc 0.724
-2026-11-10 01:00:42 | [rahman-eca/pneumonia_only] cohen_test: AUROC 0.9925 | sens 0.998 | spec 0.918 | bal.acc 0.958
-2026-11-10 01:00:45 | [rahman-eca/any_pathology] cohen_test: AUROC 0.9923 | sens 0.998 | spec 0.899 | bal.acc 0.949
-2026-11-10 01:02:11 | [rahman-eca/pneumonia_only] cohen_test_norahman: AUROC 0.9810 | sens 0.997 | spec 0.803 | bal.acc 0.900
-2026-11-10 01:02:14 | [rahman-eca/any_pathology] cohen_test_norahman: AUROC 0.9804 | sens 0.997 | spec 0.770 | bal.acc 0.884
-2026-11-10 01:04:37 | [rahman-eca/strict] cohen3_test (3-class): acc 0.9752 | macro-F1 0.971 | micro-AUROC 0.9971 | bal.acc 0.968
-2026-11-10 01:04:43 | [rahman-eca/opacity_as_pneumonia] cohen3_test (3-class): acc 0.9658 | macro-F1 0.951 | micro-AUROC 0.9947 | bal.acc 0.933
-2026-11-10 01:06:19 | [rahman-eca/strict] cohen3_test_norahman (3-class): acc 0.9669 | macro-F1 0.945 | micro-AUROC 0.9955 | bal.acc 0.928
-2026-11-10 01:06:24 | [rahman-eca/opacity_as_pneumonia] cohen3_test_norahman (3-class): acc 0.9527 | macro-F1 0.901 | micro-AUROC 0.9919 | bal.acc 0.854
+2026-11-15 00:08:03 | [rahman-eca] loaded (encoder_output=False)
+2026-11-15 00:10:06 | [rahman-eca/pneumonia_only] kermany_test: AUROC 0.9896 | sens 0.995 | spec 0.924 | bal.acc 0.960
+2026-11-15 00:10:09 | [rahman-eca/any_pathology] kermany_test: AUROC 0.9895 | sens 0.995 | spec 0.918 | bal.acc 0.957
+2026-11-15 00:11:28 | [rahman-eca/pneumonia_only] kermany_test_norahman: AUROC 0.9632 | sens 0.994 | spec 0.760 | bal.acc 0.877
+2026-11-15 00:11:31 | [rahman-eca/any_pathology] kermany_test_norahman: AUROC 0.9628 | sens 0.994 | spec 0.740 | bal.acc 0.867
+2026-11-15 00:13:41 | [rahman-eca/pneumonia_only] cohen_test: AUROC 0.9925 | sens 0.998 | spec 0.918 | bal.acc 0.958
+2026-11-15 00:13:44 | [rahman-eca/any_pathology] cohen_test: AUROC 0.9923 | sens 0.998 | spec 0.899 | bal.acc 0.949
+2026-11-15 00:15:24 | [rahman-eca/pneumonia_only] cohen_test_norahman: AUROC 0.9863 | sens 0.997 | spec 0.852 | bal.acc 0.925
+2026-11-15 00:15:27 | [rahman-eca/any_pathology] cohen_test_norahman: AUROC 0.9858 | sens 0.997 | spec 0.818 | bal.acc 0.908
+2026-11-15 00:17:55 | [rahman-eca/strict] cohen3_test (3-class): acc 0.9752 | macro-F1 0.971 | micro-AUROC 0.9971 | bal.acc 0.968
+2026-11-15 00:18:01 | [rahman-eca/opacity_as_pneumonia] cohen3_test (3-class): acc 0.9658 | macro-F1 0.951 | micro-AUROC 0.9947 | bal.acc 0.933
+2026-11-15 00:19:50 | [rahman-eca/strict] cohen3_test_norahman (3-class): acc 0.9660 | macro-F1 0.951 | micro-AUROC 0.9958 | bal.acc 0.942
+2026-11-15 00:19:56 | [rahman-eca/opacity_as_pneumonia] cohen3_test_norahman (3-class): acc 0.9533 | macro-F1 0.915 | micro-AUROC 0.9925 | bal.acc 0.882

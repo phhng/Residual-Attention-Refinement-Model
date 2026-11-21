@@ -43,7 +43,7 @@ assert not (USE_MASK and DATASET != "rahman"), "masks only exist for the Rahman 
 
 MASK_TAG = ("-mask" + ("-in" if INPUT_MASKING else "") + ("-feat" if FEATURE_MASKING else "")
             + ("-inv" if USE_INVERTED_MASK else "")) if USE_MASK else ""
-RUN_NAME = f"fe-transres50-{DATASET}{MASK_TAG}-seed{SEED}"
+RUN_NAME = f"fe-res50-{DATASET}{MASK_TAG}-seed{SEED}"
 BASE_OUT = Path("/kaggle/working") if Path("/kaggle/working").exists() else Path("outputs")
 OUT_DIR = BASE_OUT / RUN_NAME
 DATA_DIR = OUT_DIR / "data"

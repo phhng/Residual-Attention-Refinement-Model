@@ -1,0 +1,16 @@
+{
+  "thumb": 224,
+  "ncc_threshold": 0.98,
+  "rahman_split_csv_dir": "csv\\rahman",
+  "rahman_ref_splits": [
+    "train"
+  ],
+  "datasets": [
+    "kermany_test",
+    "kermany_test_norahman",
+    "cohen_test",
+    "cohen_test_norahman",
+    "cohen3_test",
+    "cohen3_test_norahman"
+  ]
+}

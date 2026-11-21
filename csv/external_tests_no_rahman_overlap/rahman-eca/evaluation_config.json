@@ -3,6 +3,7 @@
   "weights": "./model/weights/eca_LN_rahman42.pth",
   "num_classes": 4,
   "train_dataset": "rahman",
+  "use_dsa": false,
   "encoder_output": false,
   "groups": {
     "pneumonia_only": {

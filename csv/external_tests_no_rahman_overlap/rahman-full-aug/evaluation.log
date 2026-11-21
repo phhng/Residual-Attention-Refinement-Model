@@ -1,0 +1,13 @@
+2026-11-15 00:19:57 | [rahman-full-aug] loaded (encoder_output=False)
+2026-11-15 00:22:09 | [rahman-full-aug/pneumonia_only] kermany_test: AUROC 0.9934 | sens 0.986 | spec 0.937 | bal.acc 0.961
+2026-11-15 00:22:12 | [rahman-full-aug/any_pathology] kermany_test: AUROC 0.9934 | sens 0.986 | spec 0.930 | bal.acc 0.958
+2026-11-15 00:23:35 | [rahman-full-aug/pneumonia_only] kermany_test_norahman: AUROC 0.9784 | sens 0.984 | spec 0.800 | bal.acc 0.892
+2026-11-15 00:23:38 | [rahman-full-aug/any_pathology] kermany_test_norahman: AUROC 0.9781 | sens 0.984 | spec 0.780 | bal.acc 0.882
+2026-11-15 00:25:49 | [rahman-full-aug/pneumonia_only] cohen_test: AUROC 0.9938 | sens 0.981 | spec 0.937 | bal.acc 0.959
+2026-11-15 00:25:52 | [rahman-full-aug/any_pathology] cohen_test: AUROC 0.9939 | sens 0.986 | spec 0.925 | bal.acc 0.955
+2026-11-15 00:27:29 | [rahman-full-aug/pneumonia_only] cohen_test_norahman: AUROC 0.9897 | sens 0.980 | spec 0.898 | bal.acc 0.939
+2026-11-15 00:27:32 | [rahman-full-aug/any_pathology] cohen_test_norahman: AUROC 0.9896 | sens 0.983 | spec 0.875 | bal.acc 0.929
+2026-11-15 00:30:00 | [rahman-full-aug/strict] cohen3_test (3-class): acc 0.9627 | macro-F1 0.951 | micro-AUROC 0.9962 | bal.acc 0.941
+2026-11-15 00:30:06 | [rahman-full-aug/opacity_as_pneumonia] cohen3_test (3-class): acc 0.9581 | macro-F1 0.938 | micro-AUROC 0.9946 | bal.acc 0.919
+2026-11-15 00:31:53 | [rahman-full-aug/strict] cohen3_test_norahman (3-class): acc 0.9554 | macro-F1 0.928 | micro-AUROC 0.9960 | bal.acc 0.915
+2026-11-15 00:31:59 | [rahman-full-aug/opacity_as_pneumonia] cohen3_test_norahman (3-class): acc 0.9469 | macro-F1 0.901 | micro-AUROC 0.9939 | bal.acc 0.875

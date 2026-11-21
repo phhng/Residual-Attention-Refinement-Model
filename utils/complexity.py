@@ -32,12 +32,3 @@ def compute_complexity(model):
     except ImportError:
         log.info("ptflops not installed - MACs skipped")
     (OUT_DIR / "complexity.json").write_text(json.dumps(complexity, indent=2))
-
-from utils.load_model import *
-
-MODEL_PATH = "model/weights/eca_LN_kermany42.pth"
-# MODEL_PATH = "model/weights/dsa_eca_LN_rahman42.pth"
-
-model, device = load_model(MODEL_PATH, num_classes=2)
-
-compute_complexity(model)
