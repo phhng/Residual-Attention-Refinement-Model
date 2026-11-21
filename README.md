@@ -60,7 +60,7 @@ tensor_check.py # check what model receives after every masking experiment
 
 | Item           | Version                              |
 | -------------- | ------------------------------------ |
-| Python         | 3.13.16                              |
+| Python         | 3.13.16 (Kaggle)/3.14.2                               |
 | PyTorch        | 2.11.0+cu130                         |
 | torchvision    | 0.26.0+cu130                         |
 | CUDA / cuDNN   | 13.0 / 92700                         |
@@ -73,6 +73,27 @@ tensor_check.py # check what model receives after every masking experiment
 | --------- | -------------------------------------- |
 | GPU       | NVIDIA T4 x 2 on Kaggle                |
 | CPU / RAM | Intel(R) Xeon(R) CPU @ 2.00GHz / 31 GB |
+
+---
+##  Checkpoint Integrity Verification
+
+SHA-256 checksums are provided in `SHA256SUMS.txt` to verify the integrity of downloaded model checkpoints.
+
+After downloading and extracting the checkpoint files into `model/weights/`, calculate their SHA-256 hashes and compare them against the corresponding entries in `SHA256SUMS.txt`.
+
+On Windows PowerShell:
+
+```powershell
+Get-FileHash .\model\weights\{model_name}.pth -Algorithm SHA256
+```
+
+For checkpoints stored in subdirectories, specify the relative path. For example:
+
+```powershell
+Get-FileHash .\model\weights\mask_exp\{model_name}.pth -Algorithm SHA256
+```
+
+The calculated hash should match the corresponding entry in `SHA256SUMS.txt`. Repeat this process for each checkpoint you wish to verify.
 
 ---
 ## Data
