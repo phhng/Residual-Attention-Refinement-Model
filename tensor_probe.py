@@ -1,9 +1,8 @@
-#!/usr/bin/env python
 """
-tensor_probe.py  -  show the tensors the MSR network REALLY receives, plus the input and output of every block,
+Show the tensors the MSR network receives, plus the input and output of every block,
 for the five masking set-ups.
 
-Put this file in the project root (next to model/ and utils/, same place you run model_architecture.py) and run:
+For single image probe, run:
 
     python tensor_probe.py --image <path>/COVID/images/COVID-1.png \
         --weights model/weights/eca_LN_kermany42.pth --num-classes 2

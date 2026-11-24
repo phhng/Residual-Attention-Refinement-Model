@@ -1,0 +1,23 @@
+[
+  {
+    "label": 0,
+    "class_folder": "COVID19",
+    "image": "00_covid_19.jpg",
+    "mask": null,
+    "source": "COVID19/COVID19(541).jpg"
+  },
+  {
+    "label": 1,
+    "class_folder": "NORMAL",
+    "image": "01_normal.jpg",
+    "mask": null,
+    "source": "NORMAL/NORMAL(1323).jpg"
+  },
+  {
+    "label": 2,
+    "class_folder": "PNEUMONIA",
+    "image": "02_pneumonia.jpg",
+    "mask": null,
+    "source": "PNEUMONIA/PNEUMONIA(3443).jpg"
+  }
+]
