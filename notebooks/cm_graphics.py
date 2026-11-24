@@ -8,7 +8,7 @@ from IPython.display import SVG, display
 AUG = False # control whether using CM with augmented data or not
 # CM_ROOT     = Path("results/logs")
 # CM_ROOT     = Path("results/cross-dataset_eval")
-CM_ROOT = Path("results/patient-image-comparison")
+CM_ROOT = Path("results/patient-image-comparison_cm")
 GROUPED = True
 OUT_SVG = Path(f"results/graphics/cross-ds-cm{'_augment' if AUG else ''}{'_grouped' if GROUPED else ''}.svg")
 NORMALIZE   = True
@@ -88,6 +88,8 @@ def panel_title(dataset: str, run: str) -> str:
     model_name = model_names.get(model_key, run_name)
     has_norahman_marker = "norahman" in run_name.casefold()
     if GROUPED:
+        if dataset.casefold() == "fe-res50":
+            dataset_name = "FE-Res50"
         return dataset_name
     if separator and not has_norahman_marker:
         variant = variant.replace("aug", "").replace("AUG", "").strip("_- ")
