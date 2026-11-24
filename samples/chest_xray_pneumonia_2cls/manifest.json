@@ -3,14 +3,12 @@
     "label": 0,
     "class_folder": "NORMAL",
     "image": "00_normal.jpeg",
-    "mask": null,
-    "source": "NORMAL/NORMAL2-IM-0288-0001.jpeg"
+    "source": "chest_xray/train/NORMAL/IM-0221-0001.jpeg"
   },
   {
     "label": 1,
     "class_folder": "PNEUMONIA",
     "image": "01_pneumonia.jpeg",
-    "mask": null,
-    "source": "PNEUMONIA/person120_bacteria_571.jpeg"
+    "source": "chest_xray/test/PNEUMONIA/person138_bacteria_659.jpeg"
   }
 ]

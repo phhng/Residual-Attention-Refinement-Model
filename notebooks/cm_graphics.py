@@ -1,20 +1,3 @@
-# %% [markdown]
-# # Confusion matrices -> grouped SVG figure
-# Cross-dataset confusion-matrix CSVs are grouped by their first-level folder.
-# ```
-# logs/
-#   kermany/  resnet50_cm.csv  vgg16_cm.csv
-#   cohen/    resnet50_cm.csv  vgg16_cm.csv
-# ```
-# File format: CSV with a header row and a label column, e.g.
-# ```
-#                    pred_COVID  pred_Lung_Opacity  pred_Normal  pred_Viral Pneumonia
-# true_COVID         325         17                 20           0
-# ...
-# ```
-# Orientation is detected from the `true_` / `pred_` prefixes, so either layout works.
-# The output always has TRUE labels on the rows (y-axis) and PREDICTED labels on the columns (x-axis).
-
 # %% Cell 1 - config & imports
 from pathlib import Path
 import numpy as np
@@ -22,10 +5,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from IPython.display import SVG, display
 
+AUG = False # control whether using CM with augmented data or not
 # CM_ROOT     = Path("results/logs")
-CM_ROOT     = Path("results/cross-dataset_eval")
-# CM_ROOT = Path("results/patient-image-comparison")
-OUT_SVG     = Path("results/graphics/cross-ds-cm.svg")
+# CM_ROOT     = Path("results/cross-dataset_eval")
+CM_ROOT = Path("results/patient-image-comparison")
+GROUPED = True
+OUT_SVG = Path(f"results/graphics/cross-ds-cm{'_augment' if AUG else ''}{'_grouped' if GROUPED else ''}.svg")
 NORMALIZE   = True
 
 # %% Cell 2 - read a confusion matrix
@@ -51,21 +36,24 @@ def read_cm(path: Path) -> pd.DataFrame:
     return df.astype(float)
 
 # %% Cell 3 - group confusion matrices by dataset (folder name)
-def load_cms(root: Path) -> dict:
-    """Load confusion matrices, excluding training logs and augmented runs."""
+def load_cms(root: Path, include_aug: bool = False) -> dict:
     grouped = {}
     for ds_dir in sorted(p for p in root.iterdir() if p.is_dir()):
         runs = {}
         for f in sorted(ds_dir.rglob("*")):
-            if (f.suffix.lower() == ".csv" and f.stem.casefold() != "training_log"
-                    and "aug" not in f.name.casefold()): # exclude augmented runs
+            is_aug = "aug" in f.name.casefold()
+
+            if (f.suffix.lower() == ".csv"
+                    and f.stem.casefold() != "training_log"
+                    and is_aug == include_aug):
                 rel = f.relative_to(ds_dir).with_suffix("")
                 runs[str(rel).replace("\\", "/")] = read_cm(f)
+
         if runs:
             grouped[ds_dir.name] = runs
     return grouped
 
-cms = load_cms(CM_ROOT)
+cms = load_cms(CM_ROOT,include_aug=AUG)
 for ds, runs in cms.items():
     print(f"{ds}: {list(runs)}")
 
@@ -99,8 +87,12 @@ def panel_title(dataset: str, run: str) -> str:
     model_key, separator, variant = run_name.partition("_")
     model_name = model_names.get(model_key, run_name)
     has_norahman_marker = "norahman" in run_name.casefold()
+    if GROUPED:
+        return dataset_name
     if separator and not has_norahman_marker:
-        model_name += f" ({variant})"
+        variant = variant.replace("aug", "").replace("AUG", "").strip("_- ")
+        if variant:
+            model_name += f" ({variant})"
     if has_norahman_marker:
         dataset_name += "*"
     return f"{dataset_name} - {model_name}"

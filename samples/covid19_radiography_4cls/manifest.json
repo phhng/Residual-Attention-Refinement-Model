@@ -3,28 +3,32 @@
     "label": 0,
     "class_folder": "COVID",
     "image": "00_covid_19.png",
+    "source": "COVID-19_Radiography_Dataset/COVID/images/COVID-782.png",
     "mask": "00_covid_19_mask.png",
-    "source": "COVID/images/COVID-3356.png"
+    "mask_source": "COVID-19_Radiography_Dataset/COVID/masks/COVID-782.png"
   },
   {
     "label": 1,
     "class_folder": "Lung_Opacity",
     "image": "01_lung_opacity.png",
+    "source": "COVID-19_Radiography_Dataset/Lung_Opacity/images/Lung_Opacity-201.png",
     "mask": "01_lung_opacity_mask.png",
-    "source": "Lung_Opacity/images/Lung_Opacity-182.png"
+    "mask_source": "COVID-19_Radiography_Dataset/Lung_Opacity/masks/Lung_Opacity-201.png"
   },
   {
     "label": 2,
     "class_folder": "Normal",
     "image": "02_normal.png",
+    "source": "COVID-19_Radiography_Dataset/Normal/images/Normal-1068.png",
     "mask": "02_normal_mask.png",
-    "source": "Normal/images/Normal-1193.png"
+    "mask_source": "COVID-19_Radiography_Dataset/Normal/masks/Normal-1068.png"
   },
   {
     "label": 3,
     "class_folder": "Viral Pneumonia",
     "image": "03_pneumonia.png",
+    "source": "COVID-19_Radiography_Dataset/Viral Pneumonia/images/Viral Pneumonia-370.png",
     "mask": "03_pneumonia_mask.png",
-    "source": "Viral Pneumonia/images/Viral Pneumonia-295.png"
+    "mask_source": "COVID-19_Radiography_Dataset/Viral Pneumonia/masks/Viral Pneumonia-370.png"
   }
 ]

@@ -38,3 +38,6 @@ htmlcov/
 outputs/
 tensor_probe_out/
 *.zip
+model/weights/
+csv/external_tests_no_rahman_overlap/*/confusion_matrices/coh3
+csv/external_tests_no_rahman_overlap/*/confusion_matrices/kerm
